@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'first.dart';
+import 'second.dart';
+import 'third.dart';
 
 void main() => runApp(Main());
 
@@ -25,9 +28,9 @@ class Main extends StatelessWidget {
           ),
           body: TabBarView(
             children: [
-              Center(child: new Text("Home of DSC App")),
-              Center(child: new Text("Register for events!")),
-              Center(child: new Text("Notifications from DSC SRM ")),
+              TabScreen1(),
+              TabScreen2(),
+              TabScreen3(),
             ],
           ),
         ),
