@@ -1,9 +1,16 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'first.dart';
 import 'second.dart';
 import 'third.dart';
 
-void main() => runApp(Main());
+void main() {
+  SystemChrome.setPreferredOrientations(
+      [DeviceOrientation.portraitUp])
+      .then((_) {
+    runApp(Main());
+  });
+}
 
 // Guys, we've to create separate dart files for each tabs. :) All The Best!
 // And I appreciate the work and effort you put in to make it into the App Dev team! :) Kudos!!!
