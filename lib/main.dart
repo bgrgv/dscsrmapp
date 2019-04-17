@@ -23,6 +23,26 @@ class Main extends StatelessWidget {
       home: DefaultTabController(
         length: 3,
         child: Scaffold(
+          drawer: Drawer(
+            child: ListView(
+              children: <Widget>[
+                UserAccountsDrawerHeader(
+                  accountName: Text("UserName here", style: TextStyle(fontSize: 20.0)),
+                  accountEmail: Text("Email here", style: TextStyle(fontSize: 15.0)),
+                  currentAccountPicture: CircleAvatar(
+                    backgroundColor: Colors.white,
+                    child: Text("?",style: TextStyle(fontSize: 50.0),
+                    ),
+                  ),
+                ),
+                ListTile(
+                  title: Text("Sign out", style: TextStyle(fontSize: 15.0)),
+                  //onTap: yet to figure out what to put here
+                ) 
+              ],
+              )
+              
+          ),
           appBar: AppBar(
             bottom: TabBar(
               tabs: [
