@@ -6,12 +6,13 @@ import 'package:dscsrmapp/pages/second.dart';
 import 'package:dscsrmapp/pages/third.dart';
 
 class HomePage extends StatefulWidget {
-  HomePage({Key key, this.auth, this.userId, this.onSignedOut})
+  HomePage({Key key, this.auth, this.userId, this.onSignedOut, this.userEmail})
       : super(key: key);
 
   final BaseAuth auth;
   final VoidCallback onSignedOut;
   final String userId;
+  final String userEmail;
 
   @override
   State<StatefulWidget> createState() => new _HomePageState();
@@ -101,7 +102,7 @@ class _HomePageState extends State<HomePage> {
     }
   }
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context) {  
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: DefaultTabController(
@@ -116,6 +117,20 @@ class _HomePageState extends State<HomePage> {
               ],
             ),
             title: Text('DSC SRM'),
+          ),
+          drawer: Drawer(
+            child: ListView(
+              children: <Widget>[
+              UserAccountsDrawerHeader(
+                accountName: new Text(""),
+                accountEmail: new Text(widget.userEmail),
+                ),
+             ListTile(
+                title: Text("Sign out"),
+                onTap: _signOut
+                )
+              ],
+            )
           ),
           body: TabBarView(
             children: [
