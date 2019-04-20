@@ -128,7 +128,16 @@ class _HomePageState extends State<HomePage> {
              ListTile(
                 title: Text("Sign out"),
                 onTap: _signOut
-                )
+                ),
+              ListTile(
+                title: Text('About us'),
+                onTap: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context)=>About_us())
+                  );
+                },
+              ),
               ],
             )
           ),
@@ -140,6 +149,20 @@ class _HomePageState extends State<HomePage> {
             ],
           ),
         ),
+      ),
+    );
+  }
+}
+
+class About_us extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text("About Us"),
+      ),
+      body: Center(
+        child: Text('DSC SRM App in progress!', textDirection: TextDirection.ltr,),
       ),
     );
   }
