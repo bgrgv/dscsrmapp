@@ -1,6 +1,6 @@
 
 import 'package:flutter/material.dart';
-import 'Menu_Mode.dart';
+import 'package:dscsrmapp/Menu_Mode.dart';
 
 class TabScreen1 extends StatelessWidget {
   @override
