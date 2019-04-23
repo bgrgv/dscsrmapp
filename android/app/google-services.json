@@ -1,0 +1,127 @@
+{
+  "project_info": {
+    "project_number": "615205500504",
+    "firebase_url": "https://srm-dsc-companion.firebaseio.com",
+    "project_id": "srm-dsc-companion",
+    "storage_bucket": "srm-dsc-companion.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:615205500504:android:27733940bcfe1e81",
+        "android_client_info": {
+          "package_name": "blessin.dsccompanion"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "615205500504-jqokk6uq4ojgt9l0lhjfooiablma9odk.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDIgSEJ7k8hFLML07NCmEVX2DeSsvYcMEk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "615205500504-jqokk6uq4ojgt9l0lhjfooiablma9odk.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "615205500504-ahecptq5o0uaar7pgt3b308ramnf3m5s.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.ishanchhabra.DSC-SRM-Companion"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:615205500504:android:eb646ba127b6183a",
+        "android_client_info": {
+          "package_name": "blessin.dscsrmapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "615205500504-jqokk6uq4ojgt9l0lhjfooiablma9odk.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDIgSEJ7k8hFLML07NCmEVX2DeSsvYcMEk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "615205500504-jqokk6uq4ojgt9l0lhjfooiablma9odk.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "615205500504-ahecptq5o0uaar7pgt3b308ramnf3m5s.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.ishanchhabra.DSC-SRM-Companion"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:615205500504:android:1cda776a8da9aa12",
+        "android_client_info": {
+          "package_name": "com.srmdsc.dscattendance"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "615205500504-ur0174mjhmil4bsup4ndh32mravculv4.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.srmdsc.dscattendance",
+            "certificate_hash": "b994ad5e942867bdd0ecd05a0d55e74896e75d00"
+          }
+        },
+        {
+          "client_id": "615205500504-jqokk6uq4ojgt9l0lhjfooiablma9odk.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDIgSEJ7k8hFLML07NCmEVX2DeSsvYcMEk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "615205500504-jqokk6uq4ojgt9l0lhjfooiablma9odk.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "615205500504-ahecptq5o0uaar7pgt3b308ramnf3m5s.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.ishanchhabra.DSC-SRM-Companion"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

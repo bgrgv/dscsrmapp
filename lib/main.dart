@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'first.dart';
-import 'second.dart';
-import 'third.dart';
+import 'package:dscsrmapp/services/authentication.dart';
+import 'package:dscsrmapp/pages/root_page.dart';
 
 void main() {
   SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp])
@@ -17,30 +16,12 @@ void main() {
 class Main extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: DefaultTabController(
-        length: 3,
-        child: Scaffold(
-          appBar: AppBar(
-            bottom: TabBar(
-              tabs: [
-                Tab(icon: Icon(Icons.home)),
-                Tab(icon: Icon(Icons.add_circle)),
-                Tab(icon: Icon(Icons.notifications)),
-              ],
-            ),
-            title: Text('DSC SRM'),
-          ),
-          body: TabBarView(
-            children: [
-              TabScreen1(),
-              TabScreen2(),
-              TabScreen3(),
-            ],
-          ),
+    return new MaterialApp(
+        title: 'DSC Login',
+        debugShowCheckedModeBanner: false,
+        theme: new ThemeData(
+          primarySwatch: Colors.blue,
         ),
-      ),
-    );
+        home: new RootPage(auth: new Auth()));
   }
 }
