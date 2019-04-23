@@ -112,8 +112,8 @@ class _HomePageState extends State<HomePage> {
             bottom: TabBar(
               tabs: [
                 Tab(icon: Icon(Icons.home)),
-                Tab(icon: Icon(Icons.add_circle)),
-                Tab(icon: Icon(Icons.notifications)),
+                //Tab(icon: Icon(Icons.add_circle)),
+                //Tab(icon: Icon(Icons.notifications)),
               ],
             ),
             title: Text('DSC SRM'),
@@ -144,8 +144,8 @@ class _HomePageState extends State<HomePage> {
           body: TabBarView(
             children: [
               TabScreen1(),
-              TabScreen2(),
-              TabScreen3(),
+              //TabScreen2(),
+              //TabScreen3(),
             ],
           ),
         ),
