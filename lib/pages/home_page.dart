@@ -6,12 +6,13 @@ import 'package:dscsrmapp/pages/second.dart';
 import 'package:dscsrmapp/pages/third.dart';
 
 class HomePage extends StatefulWidget {
-  HomePage({Key key, this.auth, this.userId, this.onSignedOut})
+  HomePage({Key key, this.auth, this.userId, this.onSignedOut, this.userEmail})
       : super(key: key);
 
   final BaseAuth auth;
   final VoidCallback onSignedOut;
   final String userId;
+  final String userEmail;
 
   @override
   State<StatefulWidget> createState() => new _HomePageState();
@@ -101,7 +102,7 @@ class _HomePageState extends State<HomePage> {
     }
   }
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context) {  
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: DefaultTabController(
@@ -117,6 +118,29 @@ class _HomePageState extends State<HomePage> {
             ),
             title: Text('DSC SRM'),
           ),
+          drawer: Drawer(
+            child: ListView(
+              children: <Widget>[
+              UserAccountsDrawerHeader(
+                accountName: new Text(""),
+                accountEmail: new Text(widget.userEmail),
+                ),
+             ListTile(
+                title: Text("Sign out"),
+                onTap: _signOut
+                ),
+              ListTile(
+                title: Text('About us'),
+                onTap: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context)=>About_us())
+                  );
+                },
+              ),
+              ],
+            )
+          ),
           body: TabBarView(
             children: [
               TabScreen1(),
@@ -125,6 +149,20 @@ class _HomePageState extends State<HomePage> {
             ],
           ),
         ),
+      ),
+    );
+  }
+}
+
+class About_us extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text("About Us"),
+      ),
+      body: Center(
+        child: Text('DSC SRM App in progress!', textDirection: TextDirection.ltr,),
       ),
     );
   }
