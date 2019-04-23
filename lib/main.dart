@@ -5,8 +5,7 @@ import 'second.dart';
 import 'third.dart';
 
 void main() {
-  SystemChrome.setPreferredOrientations(
-      [DeviceOrientation.portraitUp])
+  SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp])
       .then((_) {
     runApp(Main());
   });
