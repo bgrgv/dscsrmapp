@@ -4,8 +4,7 @@ import 'package:dscsrmapp/services/authentication.dart';
 import 'package:dscsrmapp/pages/root_page.dart';
 
 void main() {
-  SystemChrome.setPreferredOrientations(
-      [DeviceOrientation.portraitUp])
+  SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp])
       .then((_) {
     runApp(Main());
   });
