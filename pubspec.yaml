@@ -25,6 +25,7 @@ dependencies:
   cupertino_icons: ^0.1.2
   firebase_auth: ^0.8.4+3
   webview_flutter:
+  carousel_pro:
 
 dev_dependencies:
   flutter_test:
