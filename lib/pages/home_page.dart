@@ -8,6 +8,10 @@ class HomePage extends StatefulWidget {
   HomePage({Key key, this.auth, this.userId, this.onSignedOut, this.userEmail})
       : super(key: key);
 
+  // _HomePageState createState() {
+  //   return new _HomePageState();
+  // }
+
   final BaseAuth auth;
   final VoidCallback onSignedOut;
   final String userId;
@@ -18,6 +22,8 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  bool darkTheme = false;
+
   final GlobalKey<FormState> formKey = GlobalKey<FormState>();
 
   bool _isEmailVerified = false;
@@ -150,6 +156,17 @@ class _HomePageState extends State<HomePage> {
                             MaterialPageRoute(builder: (context) => About()));
                       },
                     ),
+                    ListTile(
+                      title: Text("Dark Mode"),
+                      trailing: Switch(
+                        value: darkTheme,
+                        onChanged: (changed) {
+                          setState(() {
+                            darkTheme = changed;
+                          });
+                        },
+                      ),
+                    ),
                     ListTile(title: Text("Sign out"), onTap: _signOut),
                   ],
                 ),
@@ -169,6 +186,7 @@ class _HomePageState extends State<HomePage> {
           ),
         ),
       ),
+      theme: darkTheme ? ThemeData.dark() : ThemeData.light(),
     );
   }
 }
