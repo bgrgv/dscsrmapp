@@ -1,18 +1,16 @@
-import 'package:dscsrmapp/Menu_Mode.dart';
+import 'package:dscsrmapp/eventmode.dart';
 import 'package:flutter/material.dart';
 import 'package:carousel_pro/carousel_pro.dart';
 
 class TabScreen1 extends StatelessWidget {
-  @override
-  Widget imageCarousel = new Container(
+  final Widget imageCarousel = new Container(
     height: 200.0,
     child: new Carousel(
       boxFit: BoxFit.cover,
       images: [
-        new NetworkImage(
-            'https://cdn-images-1.medium.com/max/2000/1*GqdzzfB_BHorv7V2NV7Jgg.jpeg'),
-        new NetworkImage(
-            'https://cdn-images-1.medium.com/max/2000/1*wnIEgP1gNMrK5gZU7QS0-A.jpeg'),
+        new ExactAssetImage('assets/2.jpg'),
+        new ExactAssetImage('assets/3.jpg'),
+        new ExactAssetImage('assets/4.jpg'),
       ],
       animationCurve: Curves.fastOutSlowIn,
       animationDuration: Duration(milliseconds: 1000),
@@ -23,15 +21,35 @@ class TabScreen1 extends StatelessWidget {
       home: new Scaffold(
         body: new ListView(children: <Widget>[
           imageCarousel,
-          RaisedButton(
-            color: Colors.red,
-            child: Text('Menu Mode'),
-            onPressed: () {
-              Navigator.of(context).push(
-                  MaterialPageRoute<Null>(builder: (BuildContext context) {
-                return new MenuMode();
-              }));
-            },
+          Padding(
+            padding: const EdgeInsets.only(top: 80.0, bottom: 80.0),
+            child: new Text(
+              "Place for Cards...\nWork Pending :/",
+              style: TextStyle(fontSize: 30.0),
+              textAlign: TextAlign.center,
+            ),
+          ),
+          Column(
+            children: <Widget>[
+              Container(
+                height: 70.0,
+                width: 70.0,
+                child: new FloatingActionButton(
+                  mini: false,
+                  backgroundColor: Colors.blue[300],
+                  child: Text(
+                    'Events\nMode',
+                    textAlign: TextAlign.center,
+                  ),
+                  onPressed: () {
+                    Navigator.of(context).push(MaterialPageRoute<Null>(
+                        builder: (BuildContext context) {
+                      return new EventsMode();
+                    }));
+                  },
+                ),
+              ),
+            ],
           ),
         ]),
       ),

@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:dscsrmapp/services/authentication.dart';
-import 'dart:async';
 import 'package:dscsrmapp/pages/first.dart';
-import 'package:dscsrmapp/pages/second.dart';
-import 'package:dscsrmapp/pages/third.dart';
+import 'about.dart';
+import 'certificates.dart';
 
 class HomePage extends StatefulWidget {
   HomePage({Key key, this.auth, this.userId, this.onSignedOut, this.userEmail})
@@ -19,9 +18,7 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-
   final GlobalKey<FormState> formKey = GlobalKey<FormState>();
-
 
   bool _isEmailVerified = false;
 
@@ -39,7 +36,7 @@ class _HomePageState extends State<HomePage> {
     }
   }
 
-  void _resentVerifyEmail(){
+  void _resentVerifyEmail() {
     widget.auth.sendEmailVerification();
     _showVerifyEmailSentDialog();
   }
@@ -79,7 +76,8 @@ class _HomePageState extends State<HomePage> {
         // return object of type Dialog
         return AlertDialog(
           title: new Text("Verify your account"),
-          content: new Text("Link to verify account has been sent to your email"),
+          content:
+              new Text("Link to verify account has been sent to your email"),
           actions: <Widget>[
             new FlatButton(
               child: new Text("Dismiss"),
@@ -101,46 +99,67 @@ class _HomePageState extends State<HomePage> {
       print(e);
     }
   }
+
   @override
-  Widget build(BuildContext context) {  
+  Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: DefaultTabController(
-        length: 3,
+        length: 3, //TAB BAR CAN BE USED IN FUTURE, SO THE CODE IS LEFT HERE
         child: Scaffold(
           appBar: AppBar(
-            bottom: TabBar(
-              tabs: [
-                Tab(icon: Icon(Icons.home)),
-                //Tab(icon: Icon(Icons.add_circle)),
-                //Tab(icon: Icon(Icons.notifications)),
-              ],
-            ),
+            // bottom: TabBar(
+            //   tabs: [
+            //     Tab(icon: Icon(Icons.home)),
+            //     //Tab(icon: Icon(Icons.add_circle)),
+            //     //Tab(icon: Icon(Icons.notifications)),
+            //   ],
+            // ),
             title: Text('DSC SRM'),
           ),
           drawer: Drawer(
-            child: ListView(
-              children: <Widget>[
-              UserAccountsDrawerHeader(
-                accountName: new Text(""),
-                accountEmail: new Text(widget.userEmail),
+              child: Column(
+            children: <Widget>[
+              new Expanded(
+                child: new ListView(
+                  children: <Widget>[
+                    UserAccountsDrawerHeader(
+                      accountName: new Text(
+                        "Hey",
+                        style: TextStyle(fontSize: 20.0),
+                      ),
+                      accountEmail: new Text(
+                        widget.userEmail,
+                        style: TextStyle(fontSize: 30.0),
+                      ),
+                    ),
+                    ListTile(title: Text("Photos")),
+                    ListTile(
+                      title: Text("Certificates"),
+                      onTap: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => Certificates()));
+                      },
+                    ),
+                    ListTile(
+                      title: Text('About us'),
+                      onTap: () {
+                        Navigator.push(context,
+                            MaterialPageRoute(builder: (context) => About()));
+                      },
+                    ),
+                    ListTile(title: Text("Sign out"), onTap: _signOut),
+                  ],
                 ),
-             ListTile(
-                title: Text("Sign out"),
-                onTap: _signOut
-                ),
-              ListTile(
-                title: Text('About us'),
-                onTap: () {
-                  Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (context)=>About_us())
-                  );
-                },
               ),
-              ],
-            )
-          ),
+              new Image.asset(
+                "assets/dsc.png",
+                height: 80.0,
+              )
+            ],
+          )),
           body: TabBarView(
             children: [
               TabScreen1(),
@@ -149,20 +168,6 @@ class _HomePageState extends State<HomePage> {
             ],
           ),
         ),
-      ),
-    );
-  }
-}
-
-class About_us extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text("About Us"),
-      ),
-      body: Center(
-        child: Text('DSC SRM App in progress!', textDirection: TextDirection.ltr,),
       ),
     );
   }
