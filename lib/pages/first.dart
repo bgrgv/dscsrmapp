@@ -1,6 +1,7 @@
 import 'package:dscsrmapp/eventmode.dart';
 import 'package:flutter/material.dart';
 import 'package:carousel_pro/carousel_pro.dart';
+import 'package:dscsrmapp/main.dart';
 
 class TabScreen1 extends StatelessWidget {
   final Widget imageCarousel = new Container(
@@ -18,6 +19,7 @@ class TabScreen1 extends StatelessWidget {
   );
   Widget build(BuildContext context) {
     return new MaterialApp(
+      theme: darkTheme ? ThemeData.dark() : ThemeData.light(),
       home: new Scaffold(
         body: new ListView(children: <Widget>[
           imageCarousel,

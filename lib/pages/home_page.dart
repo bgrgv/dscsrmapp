@@ -3,14 +3,11 @@ import 'package:dscsrmapp/services/authentication.dart';
 import 'package:dscsrmapp/pages/first.dart';
 import 'about.dart';
 import 'certificates.dart';
+import 'package:dscsrmapp/main.dart';
 
 class HomePage extends StatefulWidget {
   HomePage({Key key, this.auth, this.userId, this.onSignedOut, this.userEmail})
       : super(key: key);
-
-  // _HomePageState createState() {
-  //   return new _HomePageState();
-  // }
 
   final BaseAuth auth;
   final VoidCallback onSignedOut;
@@ -22,7 +19,7 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  bool darkTheme = false;
+  //bool darkTheme = false;
 
   final GlobalKey<FormState> formKey = GlobalKey<FormState>();
 
