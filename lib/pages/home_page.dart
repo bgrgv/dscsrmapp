@@ -3,6 +3,7 @@ import 'package:dscsrmapp/services/authentication.dart';
 import 'package:dscsrmapp/pages/first.dart';
 import 'about.dart';
 import 'certificates.dart';
+import 'user_info_page.dart';
 import 'package:dscsrmapp/main.dart';
 
 class HomePage extends StatefulWidget {
@@ -134,6 +135,17 @@ class _HomePageState extends State<HomePage> {
                       accountEmail: new Text(
                         widget.userEmail,
                         style: TextStyle(fontSize: 30.0),
+                      ),
+                    currentAccountPicture: GestureDetector(
+                      child: CircleAvatar(),
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => UserInfo()
+                            )
+                          );
+                        }
                       ),
                     ),
                     ListTile(title: Text("Photos")),
