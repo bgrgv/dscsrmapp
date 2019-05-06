@@ -98,6 +98,7 @@ class EventState extends State<TabScreen1> {
     }
     List items = getDummyList();
     return new MaterialApp(
+      theme: darkTheme ? ThemeData.dark() : ThemeData.light(),
       home: new Scaffold(
         body: new Column(children: <Widget>[
           imageCarousel,
@@ -223,3 +224,80 @@ class myhome extends StatelessWidget {
     body: Center(child: ListView()));
   }
 }
+
+class NewCardWidget extends StatelessWidget { //Template 1
+  NewCardWidget({Key key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Center(
+      child: Card(
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: <Widget>[
+            const ListTile(
+              leading: Icon(Icons.album),
+              title: Text('The Enchanted Nightingale'),
+              subtitle: Text('Music by Julie Gable. Lyrics by Sidney Stein.'),
+            ),
+            ButtonTheme.bar(
+              // make buttons use the appropriate styles for cards
+              child: ButtonBar(
+                children: <Widget>[
+                  FlatButton(  //Buttons if not needed remove it
+                    child: const Text('BUY TICKETS'),
+                    onPressed: () {/* ... */},
+                  ),
+                  FlatButton( //Buttons if not needed remove it
+                    child: const Text('LISTEN'),
+                    onPressed: () {/* ... */},
+                  ),
+                ],
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+class NewCardWidget2 extends StatelessWidget { //template 2
+  NewCardWidget2({Key key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return new Card(
+                    child: new Column(
+                      children: <Widget>[
+                        new Image.network('https://i.ytimg.com/vi/fq4N0hgOWzU/maxresdefault.jpg'),
+                        new Padding(
+                          padding: new EdgeInsets.all(7.0),
+                          child: new Row(
+                            children: <Widget>[
+                             new Padding(
+                               padding: new EdgeInsets.all(7.0),
+                               child: new Icon(Icons.thumb_up),
+                             ),
+                             new Padding(
+                               padding: new EdgeInsets.all(7.0),
+                               child: new Text('Like',style: new TextStyle(fontSize: 18.0),),
+                             ),
+                             new Padding(
+                               padding: new EdgeInsets.all(7.0),
+                               child: new Icon(Icons.comment),
+                             ),
+                             new Padding(
+                               padding: new EdgeInsets.all(7.0),
+                               child: new Text('Comments',style: new TextStyle(fontSize: 18.0)),
+                             )
+
+                            ],
+                          )
+                        )
+                      ],
+                    ),
+                  );
+  }
+}
+

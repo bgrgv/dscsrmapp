@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'pages/eventmode/quiz.dart';
 import 'pages/eventmode/qrgen.dart';
+import 'main.dart';
 
 class EventsMode extends StatefulWidget {
   @override
@@ -20,9 +21,7 @@ class EventsModeState extends State<EventsMode> {
   Widget build(BuildContext context) {
     return MaterialApp(
         title: 'Events Mode',
-        theme: ThemeData(
-          primarySwatch: Colors.blue,
-        ),
+        theme: darkTheme ? ThemeData.dark() : ThemeData.light(),
         home: Scaffold(
           appBar: AppBar(
             title: Text("Events Mode"),

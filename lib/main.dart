@@ -3,6 +3,8 @@ import 'package:flutter/services.dart';
 import 'package:dscsrmapp/services/authentication.dart';
 import 'package:dscsrmapp/pages/root_page.dart';
 
+bool darkTheme = false;
+
 void main() {
   SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp])
       .then((_) {
