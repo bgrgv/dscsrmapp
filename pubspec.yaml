@@ -28,6 +28,7 @@ dependencies:
   carousel_pro:
   flutter_webview_plugin:
   qr_flutter:
+  firebase_database:
 
 dev_dependencies:
   flutter_test:

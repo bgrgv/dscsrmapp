@@ -1,4 +1,5 @@
-firebase_auth=C:\\flutter\\.pub-cache\\hosted\\pub.dartlang.org\\firebase_auth-0.8.4+3\\
-firebase_core=C:\\flutter\\.pub-cache\\hosted\\pub.dartlang.org\\firebase_core-0.3.4\\
-flutter_webview_plugin=C:\\flutter\\.pub-cache\\hosted\\pub.dartlang.org\\flutter_webview_plugin-0.3.4\\
-webview_flutter=C:\\flutter\\.pub-cache\\hosted\\pub.dartlang.org\\webview_flutter-0.3.5+3\\
+firebase_auth=E:\\Flutter\\flutter_windows_v1.2.1-stable\\flutter\\.pub-cache\\hosted\\pub.dartlang.org\\firebase_auth-0.8.4+5\\
+firebase_core=E:\\Flutter\\flutter_windows_v1.2.1-stable\\flutter\\.pub-cache\\hosted\\pub.dartlang.org\\firebase_core-0.3.4\\
+firebase_database=E:\\Flutter\\flutter_windows_v1.2.1-stable\\flutter\\.pub-cache\\hosted\\pub.dartlang.org\\firebase_database-2.0.3\\
+flutter_webview_plugin=E:\\Flutter\\flutter_windows_v1.2.1-stable\\flutter\\.pub-cache\\hosted\\pub.dartlang.org\\flutter_webview_plugin-0.3.4\\
+webview_flutter=E:\\Flutter\\flutter_windows_v1.2.1-stable\\flutter\\.pub-cache\\hosted\\pub.dartlang.org\\webview_flutter-0.3.6\\
