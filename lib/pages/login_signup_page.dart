@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:dscsrmapp/services/authentication.dart';
 
+//TODO: add popup when user enters invalid email/password when signing into app
+
 class LoginSignUpPage extends StatefulWidget {
   LoginSignUpPage({this.auth, this.onSignedIn});
 

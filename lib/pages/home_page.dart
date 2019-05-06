@@ -142,7 +142,7 @@ class _HomePageState extends State<HomePage> {
                         Navigator.push(
                           context,
                           MaterialPageRoute(
-                            builder: (context) => UserInfo()
+                            builder: (context) => UserInfoPage(auth: widget.auth)
                             )
                           );
                         }
