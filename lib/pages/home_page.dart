@@ -24,12 +24,20 @@ class _HomePageState extends State<HomePage> {
 
   final GlobalKey<FormState> formKey = GlobalKey<FormState>();
 
+  String _userPhotoUrl; //don't touch even if it's not in use. It will be in use eventually (build in progress)
+
   bool _isEmailVerified = false;
 
   @override
   void initState() {
     super.initState();
-
+    widget.auth.getCurrentUser().then((user) {
+      setState(() {
+        if(user!=null){
+          _userPhotoUrl = user?.photoUrl;
+        }
+      });
+    });
     _checkEmailVerification();
   }
 
@@ -137,7 +145,10 @@ class _HomePageState extends State<HomePage> {
                         style: TextStyle(fontSize: 30.0),
                       ),
                     currentAccountPicture: GestureDetector(
-                      child: CircleAvatar(),
+                      child: CircleAvatar(
+                        //TODO: uncomment when userPhotos are updated
+                        //backgroundImage: new NetworkImage(_userPhotoUrl),
+                      ),
                       onTap: () {
                         Navigator.push(
                           context,
