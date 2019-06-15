@@ -1,4 +1,5 @@
-firebase_auth=/home/chiraggomber/development/flutter/.pub-cache/hosted/pub.dartlang.org/firebase_auth-0.8.4+3/
-firebase_core=/home/chiraggomber/development/flutter/.pub-cache/hosted/pub.dartlang.org/firebase_core-0.3.4/
-flutter_webview_plugin=/home/chiraggomber/development/flutter/.pub-cache/hosted/pub.dartlang.org/flutter_webview_plugin-0.3.4/
-webview_flutter=/home/chiraggomber/development/flutter/.pub-cache/hosted/pub.dartlang.org/webview_flutter-0.3.5+3/
+firebase_auth=/Users/trrohith/.pub-cache/hosted/pub.dartlang.org/firebase_auth-0.8.4+3/
+firebase_core=/Users/trrohith/.pub-cache/hosted/pub.dartlang.org/firebase_core-0.3.4/
+flutter_webview_plugin=/Users/trrohith/.pub-cache/hosted/pub.dartlang.org/flutter_webview_plugin-0.3.4/
+google_sign_in=/Users/trrohith/.pub-cache/hosted/pub.dartlang.org/google_sign_in-3.3.0+1/
+webview_flutter=/Users/trrohith/.pub-cache/hosted/pub.dartlang.org/webview_flutter-0.3.5+3/

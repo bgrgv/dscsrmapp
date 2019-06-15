@@ -11,7 +11,7 @@ class LoginSignUpPage extends StatefulWidget {
   State<StatefulWidget> createState() => new _LoginSignUpPageState();
 }
 
-enum FormMode { LOGIN, SIGNUP }
+enum FormMode { LOGIN, SIGNUP, GOOGLE }
 
 class _LoginSignUpPageState extends State<LoginSignUpPage> {
   final _formKey = new GlobalKey<FormState>();
@@ -32,6 +32,8 @@ class _LoginSignUpPageState extends State<LoginSignUpPage> {
       form.save();
       return true;
     }
+    if(_formMode == FormMode.GOOGLE)
+      return true;
     return false;
   }
 
@@ -47,7 +49,11 @@ class _LoginSignUpPageState extends State<LoginSignUpPage> {
         if (_formMode == FormMode.LOGIN) {
           userId = await widget.auth.signIn(_email, _password);
           print('Signed in: $userId');
-        } else {
+        } else if(_formMode == FormMode.GOOGLE){
+          userId = await widget.auth.googleSignIn();
+          print('Signed in: $userId');
+        }
+        else {
           userId = await widget.auth.signUp(_email, _password);
           widget.auth.sendEmailVerification();
           _showVerifyEmailSentDialog();
@@ -96,6 +102,14 @@ class _LoginSignUpPageState extends State<LoginSignUpPage> {
     setState(() {
       _formMode = FormMode.LOGIN;
     });
+  }
+  void _changeFormToGoogle() {
+    _formKey.currentState.reset();
+    _errorMessage = "";
+    setState(() {
+      _formMode = FormMode.GOOGLE;
+    });
+    _validateAndSubmit();
   }
 
   @override
@@ -159,6 +173,7 @@ class _LoginSignUpPageState extends State<LoginSignUpPage> {
               _showPasswordInput(),
               _showPrimaryButton(),
               _showSecondaryButton(),
+              _showGoogleButton(),
               _showErrorMessage(),
             ],
           ),
@@ -245,6 +260,13 @@ class _LoginSignUpPageState extends State<LoginSignUpPage> {
       onPressed: _formMode == FormMode.LOGIN
           ? _changeFormToSignUp
           : _changeFormToLogin,
+    );
+  }
+  Widget _showGoogleButton() {
+    return new FlatButton(
+      child: new Text('Sign In With Google',
+          style: new TextStyle(fontSize: 18.0, fontWeight: FontWeight.w300)),
+      onPressed: _changeFormToGoogle,
     );
   }
 

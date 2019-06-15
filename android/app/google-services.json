@@ -51,6 +51,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "615205500504-ql1dte3vaju7tae1khu7kv6e001ru7k7.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "blessin.dscsrmapp",
+            "certificate_hash": "b994ad5e942867bdd0ecd05a0d55e74896e75d00"
+          }
+        },
+        {
           "client_id": "615205500504-jqokk6uq4ojgt9l0lhjfooiablma9odk.apps.googleusercontent.com",
           "client_type": 3
         }
