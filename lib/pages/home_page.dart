@@ -117,7 +117,7 @@ class _HomePageState extends State<HomePage> {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: DefaultTabController(
-        length: 3, //TAB BAR CAN BE USED IN FUTURE, SO THE CODE IS LEFT HERE
+        length: 1, //TAB BAR CAN BE USED IN FUTURE, SO THE CODE IS LEFT HERE
         child: Scaffold(
           appBar: AppBar(
             // bottom: TabBar(
