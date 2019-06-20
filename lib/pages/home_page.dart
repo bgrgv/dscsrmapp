@@ -4,6 +4,7 @@ import 'package:dscsrmapp/pages/first.dart';
 import 'about.dart';
 import 'certificates.dart';
 import 'package:dscsrmapp/main.dart';
+import './get_in_touch.dart';
 
 class HomePage extends StatefulWidget {
   HomePage({Key key, this.auth, this.userId, this.onSignedOut, this.userEmail})
@@ -108,7 +109,7 @@ class _HomePageState extends State<HomePage> {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: DefaultTabController(
-        length: 3, //TAB BAR CAN BE USED IN FUTURE, SO THE CODE IS LEFT HERE
+        length: 1, //TAB BAR CAN BE USED IN FUTURE, SO THE CODE IS LEFT HERE
         child: Scaffold(
           appBar: AppBar(
             // bottom: TabBar(
@@ -144,6 +145,15 @@ class _HomePageState extends State<HomePage> {
                             context,
                             MaterialPageRoute(
                                 builder: (context) => Certificates()));
+                      },
+                    ),
+                    ListTile(
+                      title: Text("Get in touch"),
+                      onTap: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => In_Touch()));
                       },
                     ),
                     ListTile(
